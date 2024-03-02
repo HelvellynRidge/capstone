@@ -1,8 +1,8 @@
 function Header() {
     return (
-      <div>
+      <header>
         <img src="Logo.svg" alt="Logo"></img>
-    </div>
+    </header>
     );
   }
   export default Header;
