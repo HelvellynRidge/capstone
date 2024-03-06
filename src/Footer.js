@@ -1,10 +1,10 @@
 function Footer() {
     return (
-    <footer className="four-coloumn-footer">
-        <div className="FooterImage">
-            <img src="restauranfood.jpg" alt="Restaurant and Food" style={{ width: '8%', height: 'auto' }}></img>
+    <footer class="footer">
+        <div class ="footer_segment">
+            <img src="restauranfood.jpg" alt="Restaurant and Food" style={{ width: '25%', height: 'auto' }}></img>
         </div>
-        <nav className="FooterNavigation">
+        <nav class ="footer_segment_menu">
         <ul>
             <li>
                 <a href="Home">Home
@@ -27,10 +27,10 @@ function Footer() {
             </li>
         </ul>
         </nav>
-        <address className="FooterContact">
+        <address class ="footer_segment">
              Contact information
         </address>
-        <div className="FooterSocials">FooterSocials</div>
+        <div class ="footer_segment">FooterSocials</div>
     </footer>
     );
   }
