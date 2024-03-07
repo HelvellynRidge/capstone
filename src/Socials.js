@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
+  faFacebook,
  faGithub,
+ faInstagram,
  faLinkedin,
  faMedium,
  faStackOverflow,
@@ -13,23 +15,19 @@ import { Box, HStack } from "@chakra-ui/react";
 const socials = [
  {
    icon: faEnvelope,
-   url: "mailto: hello@example.com",
- },
- {
-   icon: faGithub,
-   url: "https://www.github.com/sureskills",
+   url: "mailto: hello@littlelemmon.com",
  },
  {
    icon: faLinkedin,
-   url: "https://www.linkedin.com/in/sureskills/",
+   url: "https://www.linkedin.com/in/littlelemmon/",
  },
  {
-   icon: faMedium,
-   url: "https://medium.com/@sureskills",
+   icon: faFacebook,
+   url: "https://facebook.com/littlelemmon",
  },
  {
-   icon: faStackOverflow,
-   url: "https://stackoverflow.com/users/sureskills",
+   icon: faInstagram,
+   url: "https://instagram.com/users/littlelemmon",
  },
 ];
 
