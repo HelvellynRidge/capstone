@@ -34,7 +34,7 @@ const socials = [
 const Socials = () => {
  return ( 
     <nav>
-        <HStack spacing={8}>
+        <div className="socialsList">
             {socials.map(({ icon, url }) => (
                <a
                  key={url}
@@ -45,7 +45,7 @@ const Socials = () => {
                  <FontAwesomeIcon icon={icon} size="2x" key={url} /> 
                </a>
              ))}
-           </HStack> 
+           </div> 
     </nav>
  );
 };
