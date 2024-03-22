@@ -8,7 +8,7 @@ function Footer() {
     return (
       <div className="footerSection">
         <div className="footerSegmentImage">
-              <img src="restaurantchefB.jpg" alt="Chef B" style={{ width: '60%', height: 'auto' }}/>
+              <img src="restaurantchefB.jpg" alt="Chef B"/>
         </div>
         <nav className='footerSegmentMenu'>
         <ul>
