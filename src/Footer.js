@@ -18,24 +18,24 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/About" className="nav-item">
+              <Link to="/About" className="nav-item" aria-label="Read more about the Little Lemon Restaurant">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/Reservations" className="nav-item">
+              <Link to="/Reservations" className="nav-item" aria-label="Make a reservation">
                 Reservations
               </Link>
             </li>
           </ul>
         </nav>
-        <div className="footerSegment">
+        <address className="footerSegment">
             <p>
                 123 Main Street<br/>
                 Chicago, IL 60601<br/>
                 United States
             </p>
-        </div>
+        </address>
         <div className="footerSegment">
             <Socials/>
         </div>

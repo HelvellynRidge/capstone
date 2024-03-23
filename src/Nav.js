@@ -25,21 +25,21 @@ function Nav() {
   const [availableTimes, dispatchAvailableTimes] = useReducer(updateTimes,initialState); //reducer, initial state
 
 
-  const submitForm = async (formData) => {
+  const submitForm = (formData) => {
     try {
-      const response = await submitAPI(formData);
+      const response =  submitAPI(formData);
       if (response > 0.5) {
         // Submission successful, navigate to the ConfirmedBooking page
-        return (true);
+        return (1);
       } else {
         // Submission error, display an alert
         alert("Submission error. Please try again");
-        return(false);
+        return(9);
       }
     } catch (error) {
       // Handle any network or API errors
       alert("Submission error. Please try again");
-      return(false);
+      return(0);
     }
   };
 
@@ -57,12 +57,12 @@ function Nav() {
             </Link>
           </li>
           <li>
-            <Link to="/About" className="nav-item">
+            <Link to="/About" className="nav-item" aria-label="Read more about the Little Lemon Restaurant" >
               About
             </Link>
           </li>
           <li>
-            <Link to="/Reservations" className="nav-item">
+            <Link to="/Reservations" className="nav-item" aria-label="Make a reservation">
               Reservations
             </Link>
           </li>

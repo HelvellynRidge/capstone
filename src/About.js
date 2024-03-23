@@ -8,7 +8,7 @@ function About() {
         <Hero />
         </div>
         <div className="about">
-          <div>
+          <article>
             <h3>About Little Lemon</h3>
             <p>Welcome to Little Lemon, where traditional Italian flavors meet contemporary culinary innovation right in the heart of Chicago.
 
@@ -23,7 +23,7 @@ But we don't stop there. Our talented chefs are constantly exploring new techniq
 Beyond the food, our inviting atmosphere and attentive service create the perfect backdrop for a memorable dining experience. Whether you're gathering with friends for a leisurely lunch, enjoying a romantic dinner for two, or hosting a special celebration, our team is dedicated to ensuring that every moment spent at Little Lemon is nothing short of extraordinary.
 
 So come join us and embark on a culinary journey through the flavors of Italy, reimagined for the modern palate. Buon appetito!</p>
-          </div>
+          </article>
           <div>
             <img src="restauranfood.jpg" alt="Restaurant Food"></img>
           </div>

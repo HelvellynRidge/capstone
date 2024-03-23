@@ -8,10 +8,10 @@ function ConfirmedBooking() {
         <Hero />
         </div>
         <div className="about">
-          <div>
+          <article>
             <h3>Your booking has been confirmed</h3>
             <p>We are expecting you at the Little Lemmon Restaurant</p>
-          </div>
+          </article>
           <div>
             <img src="restauranfood.jpg" alt="Restaurant Food"></img>
           </div>

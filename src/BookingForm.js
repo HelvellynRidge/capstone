@@ -11,17 +11,28 @@ function BookingForm(props) {
     const availableTimes=props.availableTimes;
     const navigate=useNavigate();
     
+    const getIsFormValid = () => { 
+        return ( 
+          numberGuests && 
+          reservationDate && 
+          reservationTime &&
+          occasion &&
+          (numberGuests<11) 
+        ); 
+      }; 
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.submitForm(e.target);
-        navigate("/ConfirmedBooking");
+        if (props.submitForm(e.target) === 1) {
+            navigate("/ConfirmedBooking");
+        };
     }
 
     return (
     <form style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}
         onSubmit={handleSubmit}>
     <label htmlFor="res-date">Choose date</label>
-    <input type="date" id="res-date" data-testid="res-date"
+    <input type="date" id="res-date" aria-required="true" data-testid="res-date"
         value={reservationDate}
         onChange={(e) => { 
             setReservationDate(e.target.value);
@@ -29,7 +40,7 @@ function BookingForm(props) {
         }}
     />
     <label htmlFor="res-time">Choose time</label>
-    <select id="res-time"
+    <select id="res-time" aria-required="true"
         value={reservationTime}
         onChange={(e) => { 
             setReservationTime(e.target.value); 
@@ -39,22 +50,31 @@ function BookingForm(props) {
         ))}
     </select>
     <label htmlFor="guests">Number of guests</label>
-    <input type="number" placeholder="1" min="1" max="10" id="guests"
+    <input type="number" placeholder="1" min="1" max="10" id="guests" aria-required="true"
         value={numberGuests}
         onChange={(e) => { 
+            //setNumberGuests(Math.min(e.target.value,10));
             setNumberGuests(e.target.value); 
           }}
     />
+    {numberGuests > 10 ? ( 
+   <div>
+   <p>No more than 10 guests.</p>
+   </div> 
+ ) : null} 
     <label htmlFor="occasion">Occasion</label>
-    <select id="occasion"
+    <select id="occasion" aria-required="true"
         value={occasion}
         onChange={(e) => { 
             setOccasion(e.target.value); 
         }}>
+        <option>No occasion</option>
         <option>Birthday</option>
         <option>Anniversary</option>
     </select>
-    <input type="submit" value="Make Your reservation" />
+    <button type="submit" disabled={!getIsFormValid()}>
+        Make your reservation
+    </button>
     </form>)
 }
 export default BookingForm;
