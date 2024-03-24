@@ -10,10 +10,17 @@ function ConfirmedBooking() {
         <div className="about">
           <article>
             <h3>Your booking has been confirmed</h3>
-            <p>We are expecting you at the Little Lemmon Restaurant</p>
+            <p>Thank you for your booking. We are expecting you at the Little Lemmon Restaurant.</p>
+            <address className="footerSegment">
+            <p>
+                123 Main Street<br/>
+                Chicago, IL 60601<br/>
+                United States
+            </p>
+        </address>
           </article>
           <div>
-            <img src="restauranfood.jpg" alt="Restaurant Food"></img>
+            <img src="restaurant.jpg" alt="Restaurant inside"></img>
           </div>
         </div>
         <Footer />

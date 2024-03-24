@@ -1,6 +1,8 @@
-import { Box,Stack, VStack, HStack, Image, Heading, Text,useBreakpointValue } from "@chakra-ui/react";
+import { Box,Stack, VStack, HStack, Image, Heading, Text,useBreakpointValue, Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCar } from "@fortawesome/free-solid-svg-icons";
+import { hover } from "@testing-library/user-event/dist/hover";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ title, description, imageSrc }) => {
 
@@ -8,30 +10,38 @@ const Card = ({ title, description, imageSrc }) => {
     backgroundColor: "#edefee",
     cursor: "pointer",
     borderRadius: "16",
-    overflow: "hidden", // Ensure the border-radius applies to the image
-    margin: "4px 16px 16px", // Adjust the margin as needed
+    overflow: "hidden", 
+    margin: "4px 16px 16px", 
     width: "200px",
     display: "flex",
     flexDirection:"column",
+    _hover:   {
+      backgroundColor: "#f4ce14"   },
   };
 
   const imageStyle = {
-    boxSize: "95%", // Adjust the box size and margin
-    objectFit: "cover", // Maintain aspect ratio while covering the box
+    boxSize: "95%", 
+    objectFit: "cover", 
     borderRadius: "16",
-    margin: "4px 4px 4px 4px", // Adjust the margin as needed
+    margin: "4px 4px 4px 4px", 
     alignItems: "center"
   };
 
   const descriptionStyle = {
-    boxSize: "90%", // Adjust the box size and margin
-    objectFit: "cover", // Maintain aspect ratio while covering the box
+    boxSize: "90%", 
+    objectFit: "cover", 
     borderRadius: "16",
-    margin: "0 8px", // Adjust the margin as needed
+    margin: "0 8px", 
   };
 
+  const navigate=useNavigate();
+
+  const handleClick = () => {
+    navigate("/OnlineMenu");
+  }
+
   return (
-    <Box {...cardStyle}>
+   <Box {...cardStyle}  onClick={handleClick}>
       <Image
         src={imageSrc}
         alt={title}

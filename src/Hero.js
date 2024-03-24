@@ -8,7 +8,7 @@ function Hero() {
        <h2>Chicago</h2>
        <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
        <Link to="/Reservations">
-       <button class="button">Reserve a table</button>
+       <button className="button">Reserve a table</button>
        </Link>
        </article>
        <div>

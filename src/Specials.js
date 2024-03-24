@@ -1,4 +1,5 @@
 import { Box, Stack,VStack, Hstack } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 import Card from "./Card";
 
 const specialsList = [
@@ -44,7 +45,9 @@ function Specials() {
           <h1>This Week's Specials</h1>
         </div>
         <div>
+        <Link to="/OnlineMenu">
           <button className="button">Online Menu</button>
+        </Link>
         </div>
       </div>
       <div className="specials">

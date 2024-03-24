@@ -4,7 +4,6 @@ import Footer from "./Footer";
 
 
 function Main() {
-  //const [availableTimes, setAvailableTimes] = useState(["17:00","19:00"]);  
   return (
       <div className="mainSection">
         <Hero />

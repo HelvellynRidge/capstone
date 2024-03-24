@@ -16,7 +16,6 @@ function BookingForm(props) {
           numberGuests && 
           reservationDate && 
           reservationTime &&
-          occasion &&
           (numberGuests<11) 
         ); 
       }; 
@@ -29,8 +28,9 @@ function BookingForm(props) {
     }
 
     return (
-    <form style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}
+    <form className="form" 
         onSubmit={handleSubmit}>
+    <div className="formLine">
     <label htmlFor="res-date">Choose date</label>
     <input type="date" id="res-date" aria-required="true" data-testid="res-date"
         value={reservationDate}
@@ -39,6 +39,8 @@ function BookingForm(props) {
             props.dispatchAvailableTimes(reservationDate);
         }}
     />
+    </div>
+    <div className="formLine">
     <label htmlFor="res-time">Choose time</label>
     <select id="res-time" aria-required="true"
         value={reservationTime}
@@ -49,11 +51,17 @@ function BookingForm(props) {
           <option key={index} value={availableTime}>{availableTime}</option>
         ))}
     </select>
+    {!reservationTime ? ( 
+   <div>
+   <p>Specify a time.</p>
+   </div>
+   ) : null}
+    </div>
+    <div className="formLine">
     <label htmlFor="guests">Number of guests</label>
     <input type="number" placeholder="1" min="1" max="10" id="guests" aria-required="true"
         value={numberGuests}
         onChange={(e) => { 
-            //setNumberGuests(Math.min(e.target.value,10));
             setNumberGuests(e.target.value); 
           }}
     />
@@ -61,7 +69,19 @@ function BookingForm(props) {
    <div>
    <p>No more than 10 guests.</p>
    </div> 
- ) : null} 
+ ) : null}
+    {!numberGuests ? ( 
+   <div>
+   <p>Specify the number of guests.</p>
+   </div> 
+ ) : null}
+
+
+    </div>
+    
+
+    
+    <div className="formLine"> 
     <label htmlFor="occasion">Occasion</label>
     <select id="occasion" aria-required="true"
         value={occasion}
@@ -72,9 +92,12 @@ function BookingForm(props) {
         <option>Birthday</option>
         <option>Anniversary</option>
     </select>
-    <button type="submit" disabled={!getIsFormValid()}>
+    </div>
+    <div className="formButton">
+    <button className="button" type="submit" disabled={!getIsFormValid()}>
         Make your reservation
     </button>
+    </div>
     </form>)
 }
 export default BookingForm;

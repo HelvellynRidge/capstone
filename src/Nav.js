@@ -1,4 +1,4 @@
-import {useReducer} from "react"; 
+import {useEffect, useReducer} from "react"; 
 import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 
 import Main from './Main';
@@ -6,6 +6,7 @@ import About from './About';
 import Reservations from './Reservations';
 import fetchApi, { submitAPI } from './Api.js';
 import ConfirmedBooking from "./ConfirmedBooking.js";
+import OnlineMenu from "./OnlineMenu.js";
 
 
 function updateTimes(state, action) //reducer function (state, action)
@@ -29,7 +30,7 @@ function Nav() {
     try {
       const response =  submitAPI(formData);
       if (response > 0.5) {
-        // Submission successful, navigate to the ConfirmedBooking page
+        // Submission successful.
         return (1);
       } else {
         // Submission error, display an alert
@@ -37,7 +38,7 @@ function Nav() {
         return(9);
       }
     } catch (error) {
-      // Handle any network or API errors
+      // Handle any errors
       alert("Submission error. Please try again");
       return(0);
     }
@@ -73,6 +74,7 @@ function Nav() {
         <Route path="/About" element={<About />} />
         <Route path="/Reservations" element={<Reservations availableTimes={availableTimes} dispatchAvailableTimes={dispatchAvailableTimes} submitForm={submitForm}/>} />
         <Route path="/ConfirmedBooking" element={<ConfirmedBooking/>} />
+        <Route path="/OnlineMenu" element={<OnlineMenu/>} />
       </Routes>
       </BrowserRouter>
     </div>
